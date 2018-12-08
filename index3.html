@@ -1,0 +1,89 @@
+<!--https://www.youtube.com/watch?v=jV8B24rSN5o&index=3&t=0s&list=WL-->
+<!--Just a simple starter project based on Traversy Media's YouTube
+    video 'CSS Grid Layout Crash Course' to get a feel for CSS Grid-->
+<html>
+    <head>
+        <title>CSS Grid Nested Grids</title>
+        <style>
+            .wrapper {
+                display: grid;
+                /* fractions are the recommended way to go. the notation means
+                   that it will take up X of the sum of all Xfr
+                grid-template-columns: 1fr 2fr 1fr;
+                */
+                /* especially for when defining many columns, you can use the
+                   repeat(n, pattern) function */
+                /*grid-template-columns: repeat(3, 1fr 2fr);*/
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1em;
+                /* this line will set a height for each row. this will however
+                   NOT take content (such as text) spill-over into account */
+                /* grid-auto-rows: 100px; */
+                /* the line below will create a minimum of 100px, but will stretch
+                   to prevent spill-over of long content, applying it to that
+                   specific row */
+                grid-auto-rows: minmax(100px,auto);
+            }
+
+            .nested {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                /* again creating a row height like so: */
+                grid-auto-rows: 70px;
+                grid-gap: 1em;
+            }
+
+            /* this notatition means all div elements within the class wrapper */
+            .wrapper > div {
+                background: lightgray;
+                padding: 1em;
+            }
+
+            /* this notation means every other div within the wrapper */
+            .wrapper > div:nth-child(odd) {
+                background: darkgrey;
+            }
+
+            .nested > div {
+                border: black 1px solid;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div>
+                Lorem ipsum dolor sit.
+            </div>
+            <div>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet in earum nisi a aperiam dolorem obcaecati? Voluptatum unde illum delectus mollitia. Incidunt facilis id dolorum dolore, tenetur aspernatur? Doloremque natus corrupti sequi illo ipsum accusantium consequuntur asperiores saepe mollitia, iusto, quasi sed accusamus nisi suscipit aliquid. Laudantium molestias laborum debitis optio quasi. Incidunt a, eos distinctio consequuntur dolores adipisci aperiam odit modi neque dolorem laudantium quasi laboriosam ipsa id fuga vel dicta saepe expedita perspiciatis. Ducimus nulla provident nam sed.
+            </div>
+            <div class="nested">
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+                <div>Lorem</div>
+            </div>
+            <div>
+                Lorem ipsum dolor sit.
+            </div>
+            <div>
+                Lorem ipsum dolor sit.
+            </div>
+            <div>
+                Lorem ipsum dolor sit.
+            </div>
+            <div>
+                Lorem ipsum dolor sit.
+            </div>
+            <div>
+                Lorem ipsum dolor sit.
+            </div>
+        </div>
+    </body>
+</html>

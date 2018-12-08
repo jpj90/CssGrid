@@ -13,9 +13,13 @@
                    column */
                 grid-template-columns: 40% 30% 30%;
                 /* the (optional) lines below define that we want a gap between
-                   columns and rows */
+                   columns and rows 
                 grid-column-gap: 1em;
                 grid-row-gap: 1em;
+                */
+                /* when row and column spacing is the same, you can use the 
+                   line below */
+                grid: gap;
             }
             /* this notatition means all div elements within the class wrapper */
             .wrapper > div {
