@@ -1,0 +1,48 @@
+<!--https://www.youtube.com/watch?v=jV8B24rSN5o&index=3&t=0s&list=WL-->
+<!--Just a simple starter project based on Traversy Media's YouTube
+    video 'CSS Grid Layout Crash Course' to get a feel for CSS Grid-->
+<html>
+    <head>
+        <title>CSS Grid</title>
+        <style>
+            .wrapper {
+                /* this is what activates the displaying as a grid */
+                display: grid;
+                /* the line below determines how each row will be structured,
+                   defining how much of the row can be taken up by a single
+                   column */
+                grid-template-columns: 40% 30% 30%;
+                /* the (optional) lines below define that we want a gap between
+                   columns and rows */
+                grid-column-gap: 1em;
+                grid-row-gap: 1em;
+            }
+            /* this notatition means all div elements within the class wrapper */
+            .wrapper > div {
+                background: lightgray;
+                padding: 1em;
+            }
+
+            /* this notation means every other div within the wrapper */
+            .wrapper > div:nth-child(odd) {
+                background: darkgrey;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt reiciendis iusto tenetur quam placeat, laudantium, minima aspernatur recusandae libero laboriosam nulla repudiandae nemo expedita repellendus modi omnis sit. Ullam facilis iusto cum impedit repellendus, nisi dolor neque culpa magni, quo, in nobis consectetur nulla nam debitis ducimus exercitationem? Sint qui unde tempore facilis enim amet ea dolores ut tempora vitae labore dolorem harum veniam, cumque commodi! Expedita, quisquam quod unde ullam, velit quas architecto possimus consectetur commodi in similique.
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis voluptatem suscipit recusandae exercitationem, illo sed deleniti aspernatur debitis sapiente rerum iusto fugit illum amet delectus dolores vero dolor. Nesciunt?
+            </div>
+            <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt reiciendis iusto tenetur quam placeat, laudantium, minima aspernatur recusandae libero laboriosam nulla repudiandae nemo expedita repellendus modi omnis sit. Ullam facilis iusto cum impedit repellendus, nisi dolor neque culpa magni, quo, in nobis consectetur nulla nam debitis ducimus exercitationem? Sint qui unde tempore facilis enim amet ea dolores ut tempora vitae labore dolorem harum veniam, cumque commodi! Expedita, quisquam quod unde ullam, velit quas architecto possimus consectetur commodi in similique.
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis voluptatem suscipit recusandae exercitationem, illo sed deleniti aspernatur debitis sapiente rerum iusto fugit illum amet delectus dolores vero dolor. Nesciunt?
+                </div>
+        </div>
+    </body>
+</html>
